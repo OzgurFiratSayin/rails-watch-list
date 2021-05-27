@@ -1,0 +1,15 @@
+<p><%= @list.name %></p>
+
+<% @list.bookmarks.each do |bookmark| %>
+  <p><%= bookmark.comment %></p>
+  <% mi = bookmark.movie_id %>
+  <p><%= Movie.find(mi).title %></p>
+  <p><%= Movie.find(mi).overview %></p>
+  <p><%= Movie.find(mi).poster_url %></p>
+  <p><%= Movie.find(mi).rating %></p>
+  <p>Bookmark id = <%= bookmark.id %></p>
+  <%= link_to 'Delete', delete_bookmark_path(bookmark), method: :delete %>
+<% end %>
+<br>
+<%= link_to 'Create a bookmark', new_list_bookmark_path(list_id = @list.id) %>
+<%= link_to 'Back', lists_path  %>
