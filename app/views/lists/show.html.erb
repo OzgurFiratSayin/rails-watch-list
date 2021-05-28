@@ -1,15 +1,39 @@
-<p><%= @list.name %></p>
 
-<% @list.bookmarks.each do |bookmark| %>
-  <p><%= bookmark.comment %></p>
-  <% mi = bookmark.movie_id %>
-  <p><%= Movie.find(mi).title %></p>
-  <p><%= Movie.find(mi).overview %></p>
-  <p><%= Movie.find(mi).poster_url %></p>
-  <p><%= Movie.find(mi).rating %></p>
-  <p>Bookmark id = <%= bookmark.id %></p>
-  <%= link_to 'Delete', delete_bookmark_path(bookmark), method: :delete %>
-<% end %>
+<div class="banner-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key %>')">
+  <h1><%= @list.name %></h1>
+</div>
+<div class="container-main">
+  <div class="top-bar">
+    <%= link_to 'Create a bookmark', new_list_bookmark_path(list_id = @list.id), :class => "btn btn-success" %>
+    <%= link_to 'Delete ths list', @destroy, method: :delete, :class => "btn btn-danger" %>
+    <%= link_to 'Back to Lists', lists_path, :class => "btn btn-primary"  %>
+  </div>
+  <div class="container-bookmarks">
+    <% @list.bookmarks.each do |bookmark| %>
+      <% mi = bookmark.movie_id %>
+      <div class="card-bookmark">
+        <div class="container-image">
+          <img src="<%= Movie.find(mi).poster_url %>" alt="<%= Movie.find(mi).title %> image">
+        </div>
+        <div class="title-rating">
+          <p style= "font-weight: bold"><%= Movie.find(mi).title %> </p>
+          <i class="fas fa-star"></i>
+          <%= Movie.find(mi).rating %>
+        </div>
+        <p><%= Movie.find(mi).overview %></p>
+        <div class="footer">
+          <div>
+            <i class="fas fa-quote-left">
+            </i> <%= bookmark.comment %>
+            <i class="fas fa-quote-right"></i>
+          </div>
+          <%= link_to 'Delete', delete_bookmark_path(bookmark), method: :delete, :style => "color: red" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <br>
-<%= link_to 'Create a bookmark', new_list_bookmark_path(list_id = @list.id) %>
+
 <%= link_to 'Back', lists_path  %>

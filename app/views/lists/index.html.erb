@@ -6,17 +6,16 @@
 <div class="banner">
 </div>
 
-<div id="my-list">
-  <div id="my-list-top-bar">
+<div id="my-lists">
+  <div id="my-lists-top-bar">
     <h2>My Lists</h2>
     <%= link_to 'Create a movie list', new_list_path, :class => "btn btn-success"%>
   </div>
   <div class="container-cards">
     <% @lists.each do |list| %>
         <%= link_to list_path(list) do %>
-          <div class="card-list"><%=list.name%></div>
+          <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')"><%=list.name%></div>
         <% end %>
     <% end %>
   </div>
 </div>
-
