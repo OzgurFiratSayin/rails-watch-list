@@ -1,1 +1,17 @@
-
+.navbar {
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacer;
+    background-color: #CED4DA;
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  
+    i {
+      font-size: 32px;
+    }
+  
+    a {
+      color: black;
+    }
+  }

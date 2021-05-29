@@ -12,3 +12,37 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/show";
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .card-bookmark, .card-list {
+    flex: 0 0 100%;
+  }
+}
+  
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .card-bookmark, .card-list {
+    flex: 0 0 100%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .card-bookmark, .card-list {
+        flex: 0 0 44%;;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .card-bookmark, .card-list {
+        flex: 0 0 44%;;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .card-bookmark, .card-list {
+    flex: 0 0 30%;;
+  }
+}

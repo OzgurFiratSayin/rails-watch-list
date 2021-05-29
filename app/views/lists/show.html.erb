@@ -6,7 +6,6 @@
   <div class="top-bar">
     <%= link_to 'Create a bookmark', new_list_bookmark_path(list_id = @list.id), :class => "btn btn-success" %>
     <%= link_to 'Delete ths list', @destroy, method: :delete, :class => "btn btn-danger" %>
-    <%= link_to 'Back to Lists', lists_path, :class => "btn btn-primary"  %>
   </div>
   <div class="container-bookmarks">
     <% @list.bookmarks.each do |bookmark| %>
@@ -33,7 +32,3 @@
     <% end %>
   </div>
 </div>
-
-<br>
-
-<%= link_to 'Back', lists_path  %>
