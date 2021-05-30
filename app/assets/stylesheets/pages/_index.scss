@@ -9,7 +9,7 @@ body {
   background-image: asset-url("main.jpg");
   background-size: cover;
   width: 100vw;
-  height: 56vh;
+  height: 100vh;
 }
 
 #my-lists {
@@ -22,7 +22,7 @@ body {
     justify-content: space-between;
   }
 
-  .container-cards {
+  #container-lists {
     margin: ($spacer * 2);
     display: flex;
     flex-wrap: wrap;

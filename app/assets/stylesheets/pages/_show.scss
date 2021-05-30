@@ -4,7 +4,7 @@ $spacer: 8px;
 .banner-list {
   background-size: cover;
   width: 100vw;
-  height: 56vh;
+  height: 100vh;
   color: white;
   display: flex;
   justify-content: center;
@@ -35,7 +35,7 @@ $spacer: 8px;
     }
   }
 
-  .container-bookmarks {
+  #container-bookmarks {
     margin: ($spacer * 2);
     display: flex;
     justify-content: space-evenly;

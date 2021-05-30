@@ -6,15 +6,27 @@
     align-items: center;
     justify-content: space-between;
     padding: $spacer;
-    background-color: #CED4DA;
     box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    background-color: transparent;
+    transition: 0.5s background-color ease;
+    color: white;
   
     i {
       font-size: 32px;
     }
   
     a {
-      color: black;
+      color: white;
       padding-right: $spacer;
+    }
+  }
+
+  .navbar-grey {
+    background-color: #ced4da;
+    opacity: 0.8;
+    color: black;
+
+    a {
+      color:black;
     }
   }
