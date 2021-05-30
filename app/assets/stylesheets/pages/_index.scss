@@ -6,12 +6,21 @@ body {
 }
 
 .banner-main {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('main.jpg');
   background-size: cover;
   width: 100vw;
   height: 56vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   img {
     width: 100%;
     height: 100%;
+  }
+  #banner-typed-text {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
   }
 }
 
